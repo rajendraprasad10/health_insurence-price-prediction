@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body bgcolor="#CACFD2  ">
+ <div class="login">
+     <center>
+    <h2> Implemation Of Prediction System Using ML And Flask </h2>
+	<h3> Health Insurance Cost Prediction Analysis </h3>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="Age" required="required" />
+        <br/>
+        <br/>
+        <input type="text" name="Gender 1(M)-0(W)" placeholder="Gender 1(M)-0(W)" required="required" />
+        <br/>
+        <br/>
+        <input type="text" name="BMI" placeholder="bmi" required="required" />
+        <br/>
+        <br/>
+        <input type="text" name="children" placeholder="children 1(Y)-0(N)" required="required" />
+        <br/>
+        <br/>
+        <input type="text" name="smoker" placeholder="smoker 1(Y)-0(N)" required="required" />
+        <br/>
+        <br/>
+        Should be number 3(southwest) 2(southeast) 1(northwest) 0(northeast)
+        <br/>
+        <input type="text" name="region" placeholder="region" required="required" />
+        <br/>
+        <br/>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    </center>
+   <br>
+   <br>
+     <center>
+   {{ prediction_text }}
+    </center>
+ </div>
+
+
+</body>
+</html>
